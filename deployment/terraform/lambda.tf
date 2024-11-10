@@ -6,7 +6,7 @@ resource "aws_lambda_function" "ap-northeast-1" {
   function_name = "${var.name}-${random_id.this.hex}"
   handler       = "main"
   role          = aws_iam_role.lambda.arn
-  runtime       = "provided.al2"
+  runtime       = "provided.al2023"
 
   tags = {
     Name      = var.name
@@ -26,7 +26,7 @@ resource "aws_lambda_function" "ap-northeast-2" {
   function_name = "${var.name}-${random_id.this.hex}"
   handler       = "main"
   role          = aws_iam_role.lambda.arn
-  runtime       = "provided.al2"
+  runtime       = "provided.al2023"
 
   tags = {
     Name      = var.name
@@ -46,7 +46,7 @@ resource "aws_lambda_function" "ap-south-1" {
   function_name = "${var.name}-${random_id.this.hex}"
   handler       = "main"
   role          = aws_iam_role.lambda.arn
-  runtime       = "provided.al2"
+  runtime       = "provided.al2023"
 
   tags = {
     Name      = var.name
@@ -66,7 +66,7 @@ resource "aws_lambda_function" "ap-southeast-1" {
   function_name = "${var.name}-${random_id.this.hex}"
   handler       = "main"
   role          = aws_iam_role.lambda.arn
-  runtime       = "provided.al2"
+  runtime       = "provided.al2023"
 
   tags = {
     Name      = var.name
@@ -86,7 +86,7 @@ resource "aws_lambda_function" "ap-southeast-2" {
   function_name = "${var.name}-${random_id.this.hex}"
   handler       = "main"
   role          = aws_iam_role.lambda.arn
-  runtime       = "provided.al2"
+  runtime       = "provided.al2023"
 
   tags = {
     Name      = var.name
@@ -106,7 +106,7 @@ resource "aws_lambda_function" "ca-central-1" {
   function_name = "${var.name}-${random_id.this.hex}"
   handler       = "main"
   role          = aws_iam_role.lambda.arn
-  runtime       = "provided.al2"
+  runtime       = "provided.al2023"
 
   tags = {
     Name      = var.name
@@ -126,7 +126,7 @@ resource "aws_lambda_function" "eu-central-1" {
   function_name = "${var.name}-${random_id.this.hex}"
   handler       = "main"
   role          = aws_iam_role.lambda.arn
-  runtime       = "provided.al2"
+  runtime       = "provided.al2023"
 
   tags = {
     Name      = var.name
@@ -146,7 +146,7 @@ resource "aws_lambda_function" "eu-north-1" {
   function_name = "${var.name}-${random_id.this.hex}"
   handler       = "main"
   role          = aws_iam_role.lambda.arn
-  runtime       = "provided.al2"
+  runtime       = "provided.al2023"
 
   tags = {
     Name      = var.name
@@ -166,7 +166,7 @@ resource "aws_lambda_function" "eu-west-1" {
   function_name = "${var.name}-${random_id.this.hex}"
   handler       = "main"
   role          = aws_iam_role.lambda.arn
-  runtime       = "provided.al2"
+  runtime       = "provided.al2023"
 
   tags = {
     Name      = var.name
@@ -186,7 +186,7 @@ resource "aws_lambda_function" "eu-west-2" {
   function_name = "${var.name}-${random_id.this.hex}"
   handler       = "main"
   role          = aws_iam_role.lambda.arn
-  runtime       = "provided.al2"
+  runtime       = "provided.al2023"
 
   tags = {
     Name      = var.name
@@ -206,7 +206,7 @@ resource "aws_lambda_function" "eu-west-3" {
   function_name = "${var.name}-${random_id.this.hex}"
   handler       = "main"
   role          = aws_iam_role.lambda.arn
-  runtime       = "provided.al2"
+  runtime       = "provided.al2023"
 
   tags = {
     Name      = var.name
@@ -226,7 +226,7 @@ resource "aws_lambda_function" "sa-east-1" {
   function_name = "${var.name}-${random_id.this.hex}"
   handler       = "main"
   role          = aws_iam_role.lambda.arn
-  runtime       = "provided.al2"
+  runtime       = "provided.al2023"
 
   tags = {
     Name      = var.name
@@ -246,7 +246,7 @@ resource "aws_lambda_function" "us-east-1" {
   function_name = "${var.name}-${random_id.this.hex}"
   handler       = "main"
   role          = aws_iam_role.lambda.arn
-  runtime       = "provided.al2"
+  runtime       = "provided.al2023"
 
   tags = {
     Name      = var.name
@@ -266,7 +266,7 @@ resource "aws_lambda_function" "us-east-2" {
   function_name = "${var.name}-${random_id.this.hex}"
   handler       = "main"
   role          = aws_iam_role.lambda.arn
-  runtime       = "provided.al2"
+  runtime       = "provided.al2023"
 
   tags = {
     Name      = var.name
@@ -286,7 +286,7 @@ resource "aws_lambda_function" "us-west-1" {
   function_name = "${var.name}-${random_id.this.hex}"
   handler       = "main"
   role          = aws_iam_role.lambda.arn
-  runtime       = "provided.al2"
+  runtime       = "provided.al2023"
 
   tags = {
     Name      = var.name
@@ -306,7 +306,7 @@ resource "aws_lambda_function" "us-west-2" {
   function_name = "${var.name}-${random_id.this.hex}"
   handler       = "main"
   role          = aws_iam_role.lambda.arn
-  runtime       = "provided.al2"
+  runtime       = "provided.al2023"
 
   tags = {
     Name      = var.name
