@@ -15,8 +15,8 @@ import (
 )
 
 const (
-	lambdaFunctionHandler     = "main"
-	lambdaFunctionRuntime     = "go1.x"
+	lambdaFunctionHandler     = "bootstrap"
+	lambdaFunctionRuntime     = "provided.al2"
 	lambdaFunctionZipLocation = "artifacts/lambda.zip"
 )
 
