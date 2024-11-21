@@ -16,7 +16,7 @@ import (
 
 const (
 	lambdaFunctionHandler     = "bootstrap"
-	lambdaFunctionRuntime     = "provided.al2"
+	lambdaFunctionRuntime     = "provided.al2023"
 	lambdaFunctionZipLocation = "artifacts/lambda.zip"
 )
 
