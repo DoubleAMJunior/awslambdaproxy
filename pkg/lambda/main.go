@@ -32,18 +32,18 @@ func Handler(request Request) (Response, error) {
 	}
 
 	log.Println("Starting proxy server")
-	lambdaProxyServer := startLambdaProxyServer()
+	lambdaProxyServer := StartLambdaProxyServer()
 	defer lambdaProxyServer.close()
 
 	log.Printf("Establishing ssh tunnel connection to %v\n", request.Address)
-	lambdaTunnelConnection, err := setupLambdaTunnelConnection(request.Address, request.SSHPort, request.SSHUser, privateKeyFile)
+	lambdaTunnelConnection, err := SetupLambdaTunnelConnection(request.Address, request.SSHPort, request.SSHUser, privateKeyFile)
 	if err != nil {
 		log.Fatalf("Failed to establish connection to %v: %v\n", request.Address, err)
 	}
 	defer lambdaTunnelConnection.close()
 
 	log.Println("Starting lambdaDataCopyManager")
-	dataCopyManager := newLambdaDataCopyManager(lambdaProxyServer, lambdaTunnelConnection)
+	dataCopyManager := NewLambdaDataCopyManager(lambdaProxyServer, lambdaTunnelConnection)
 	dataCopyManager.run()
 	return Response{
 		Message: fmt.Sprintf("Finished processing request"),
@@ -52,5 +52,7 @@ func Handler(request Request) (Response, error) {
 }
 
 func main() {
+	log.Println("calling start on lambda")
 	lambda.Start(Handler)
+	log.Println("after start on lambda")
 }

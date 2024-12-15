@@ -45,7 +45,7 @@ func (l *lambdaProxyServer) close() {
 	}
 }
 
-func startLambdaProxyServer() *lambdaProxyServer {
+func StartLambdaProxyServer() *lambdaProxyServer {
 	server := &lambdaProxyServer{}
 	go server.run()
 	return server

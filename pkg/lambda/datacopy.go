@@ -34,7 +34,7 @@ func (l *lambdaDataCopyManager) run() {
 	}
 }
 
-func newLambdaDataCopyManager(p *lambdaProxyServer, t *lambdaTunnelConnection) *lambdaDataCopyManager {
+func NewLambdaDataCopyManager(p *lambdaProxyServer, t *lambdaTunnelConnection) *lambdaDataCopyManager {
 	return &lambdaDataCopyManager{
 		lambdaTunnelConnection: t,
 		lambdaProxyServer:      p,

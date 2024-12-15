@@ -68,7 +68,7 @@ func (l *lambdaTunnelConnection) close() {
 	}
 }
 
-func setupLambdaTunnelConnection(tunnelHost string, sshPort string, sshUsername string,
+func SetupLambdaTunnelConnection(tunnelHost string, sshPort string, sshUsername string,
 	sshPrivateKeyFile string) (*lambdaTunnelConnection, error) {
 	data, err := ioutil.ReadFile(sshPrivateKeyFile)
 	if err != nil {
