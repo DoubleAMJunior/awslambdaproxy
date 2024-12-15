@@ -41,10 +41,12 @@ func (l *lambdaExecutionManager) run() {
 		}
 		for region := range l.regions {
 			err := l.executeFunction(region, setInvokeConfig)
+			sleepAmount := l.frequency
 			if err != nil {
 				log.Println(err)
+				sleepAmount = 10 * time.Second
 			}
-			time.Sleep(l.frequency)
+			time.Sleep(sleepAmount)
 		}
 		count++
 	}
@@ -61,9 +63,9 @@ func (l *lambdaExecutionManager) executeFunction(region int, setInvokeConfig boo
 
 	if setInvokeConfig {
 		maximumEventAgeInSeconds := int64(1800)
-		maximumRetryAttempts := int64(0)
-		log.Printf("Setting invoke configuration maximumRetryAttempts=%v maximumEventAgeInSeconds=%v\n",
-			maximumRetryAttempts, maximumEventAgeInSeconds)
+		maximumRetryAttempts := int64(0) //TODO MAKE IT RETRY MORE
+		log.Printf("Setting invoke configuration maximumRetryAttempts=%v maximumEventAgeInSeconds=%v functionName=%s\n",
+			maximumRetryAttempts, maximumEventAgeInSeconds, l.name)
 		_, err = svc.PutFunctionEventInvokeConfig(&lambda.PutFunctionEventInvokeConfigInput{
 			FunctionName:             aws.String(l.name),
 			MaximumEventAgeInSeconds: aws.Int64(maximumEventAgeInSeconds),
