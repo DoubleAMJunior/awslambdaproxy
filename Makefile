@@ -74,7 +74,7 @@ server-build-osx:
 	    "-X $(PACKAGE)/cmd/awslambdaproxy.version=$(VERSION)" \
 	    -v -o $(CURDIR)/artifacts/server/darwin/$(TARGET) ./cmd/main.go
 
-build: lambda-build server-build-linux
+build: server-build-linux
 
 build-osx: lambda-build server-build-osx
 

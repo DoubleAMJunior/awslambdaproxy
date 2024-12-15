@@ -1,8 +1,21 @@
+FROM golang:1.23 AS lambda-env
+WORKDIR /app
+COPY ./pkg/lambda .
+RUN GOOS=linux GOARCH=amd64 go build -o bootstrap .
+RUN apt-get update && apt-get install -y zip
+RUN mkdir -p artifacts && zip -j artifacts/lambda.zip bootstrap
+
 FROM golang:1.14 AS build-env
 RUN apt-get update -y
 RUN apt-get install -y zip
 RUN go get -u github.com/go-bindata/go-bindata/...
+
 ADD . /src
+WORKDIR /src
+RUN mkdir -p artifacts
+COPY --from=lambda-env app/artifacts/ ./artifacts/
+
+RUN go-bindata -nocompress -pkg server -o pkg/server/bindata.go artifacts/lambda.zip
 RUN cd /src && make build
 
 FROM alpine:latest
