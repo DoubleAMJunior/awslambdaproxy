@@ -1,0 +1,14 @@
+# Use the official Go image from the Docker Hub
+FROM golang:1.23
+
+# Set the Current Working Directory inside the container
+WORKDIR /app
+
+# Copy the entire local directory contents into the container at /app
+COPY . .
+
+# Install bash (optional, in case it's not installed by default)
+RUN apt-get update && apt-get install -y bash
+
+# Start an interactive bash shell
+CMD ["/bin/bash"]
